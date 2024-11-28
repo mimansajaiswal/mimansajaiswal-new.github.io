@@ -50,7 +50,7 @@ const truncatedHref = Href && Href.length > 30 ? Href.slice(0, 30) + '...' : Hre
 					</>
 				):
         <>
-        <Icon name={"external-link-mention"} class="inline h-4 w-4 mb-0.5" aria-hidden="true" />{" "}
+        <Icon name={"external-link-mention"} class="inline h-4 w-4 mb-0.5 align-sub" aria-hidden="true" />{" "}
         </>}
 				{LinkProvider && LinkProvider!==Title && (
 					<>
@@ -76,7 +76,7 @@ const truncatedHref = Href && Href.length > 30 ? Href.slice(0, 30) + '...' : Hre
 					</>
 				):
         <>
-        <Icon name={"external-link-mention"} class="inline h-4 w-4 mb-0.5" aria-hidden="true" />{" "}
+        <Icon name={"external-link-mention"} class="inline h-4 w-4 mb-0.5 align-sub" aria-hidden="true" />{" "}
         </>}
         {LinkProvider && LinkProvider!==Title && LinkProvider!==LinkAuthor && (
 					<>
@@ -138,7 +138,7 @@ const truncatedHref = Href && Href.length > 30 ? Href.slice(0, 30) + '...' : Hre
 					</s>
 				):
         <>
-        <Icon name={"external-link-mention"} class="inline h-4 w-4 mb-0.5" aria-hidden="true" />{" "}
+        <Icon name={"external-link-mention"} class="inline h-4 w-4 mb-0.5 align-sub" aria-hidden="true" />{" "}
         </>}
         {Href && <span class="text-xs font-medium text-link/80">{truncatedHref}</span>}
       </div>
