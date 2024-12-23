@@ -1,11 +1,10 @@
 ---
-import { Post } from "../../lib/interfaces.ts";
+import { type Post } from "../../lib/interfaces.ts";
 import { getPostByPageId } from "../../lib/notion/client";
 import { getPostLink } from "../../lib/blog-helpers.ts";
 import { MENU_PAGES_COLLECTION } from "@/constants";
 import { getIconTailwindFilterStyle } from "@/lib/style-helpers";
 import Icon from "@/components/Icon";
-// import { rootHasDarkClass } from "@/utils";
 
 export interface Props {
 	pageId: string;
@@ -17,16 +16,13 @@ let post: Post = null;
 if (pageId) {
 	post = await getPostByPageId(pageId);
 }
-// let iconURL = post.Icon && post.Icon.Type === "external" && isNotionIconURL(post.Icon.Url)?post.Icon.Url:null;
-//does not work because that needs to be in client side script
-// if (rootHasDarkClass() && iconURL){iconURL = post.Icon.Url+"?mode=dark";}
 
 const hreflink = post ? getPostLink(post.Slug, post.Collection === MENU_PAGES_COLLECTION) : null;
 ---
 
 {
 	post && (
-		<a href={hreflink} class="site-page-link inline items-center justify-center font-medium">
+		<a href={hreflink} class="site-page-link text-link inline items-center justify-center">
 			<>
 				<span class="mr-1 inline">
 					{post.Icon && post.Icon.Type === "emoji" ? (
